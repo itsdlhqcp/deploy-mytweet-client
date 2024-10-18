@@ -121,7 +121,7 @@ const TWITTER_STATE = "twitter-increaser-state";
 const TWITTER_CODE_CHALLENGE = "challenge";
 const TWITTER_AUTH_URL = "https://twitter.com/i/oauth2/authorize";
 const TWITTER_SCOPE = ["tweet.read", "users.read", "offline.access"].join(" ");
-const CALLBACK_URL = 'https://my-tweet-eight.vercel.app/signin'; // Set this to your actual callback URL
+const CALLBACK_URL = 'https://deploy-mytweet-client.vercel.app/signin'; // Set this to your actual callback URL
 
 const getTwitterOAuthUrl = (redirectUri) =>
   getURLWithQueryParams(TWITTER_AUTH_URL, {
@@ -195,7 +195,7 @@ const SignIn = () => {
   
   const exchangeCodeForToken = async (authorizationCode) => {
     try {
-      const response = await fetch('http://localhost:5000/api/twitter/token', {
+      const response = await fetch('https://deploy-mytweet-server.onrender.com/api/twitter/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
